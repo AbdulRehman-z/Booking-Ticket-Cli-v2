@@ -1,13 +1,15 @@
 package helper
 
 import (
+	"Golang/models/user"
 	"fmt"
 	"strings"
 )
 
 func GreetUsers(conferenceTickets uint, remainingTickets uint, conferenceName string) {
+
 	fmt.Printf("Welcome to %v Golang conference\n", conferenceName)
-	fmt.Printf("We have %v available tickets & %v remaining tickets for %v Golanf conference. \n", conferenceTickets, remainingTickets, conferenceName)
+	fmt.Printf("We have %v available tickets & %v remaining tickets for %v Golang conference. \n", conferenceTickets, remainingTickets, conferenceName)
 }
 
 func ValidateUserInputs(firstName string, lastName string, email string, bookedTickets uint, remainingTickets uint) (bool, bool, bool) {
@@ -28,7 +30,7 @@ func GetFirstNames(bookings []string) []string {
 
 }
 
-func GetUserInputs() (string, string, string, uint) {
+func GetUserInputs() user.UserInputs {
 	var firstName string
 	var lastName string
 	var email string
@@ -51,7 +53,14 @@ func GetUserInputs() (string, string, string, uint) {
 	fmt.Println("How many tickets you want:")
 	fmt.Scan(&bookedTickets)
 
-	return firstName, lastName, email, bookedTickets
+	userData := user.UserInputs{
+		FirstName:     firstName,
+		LastName:      lastName,
+		Email:         email,
+		BookedTickets: bookedTickets,
+	}
+
+	return userData
 }
 
 func ErrorReport(isValidUsername bool, isValidEmail bool, isValidBooking bool, firstName string, email string, remainingTickets uint) {
