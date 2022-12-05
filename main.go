@@ -14,7 +14,7 @@ import (
 func main() {
 	var conferenceCity string
 
-	fmt.Println("Welcome to Golang conference. Please enter which conference you want to attend!")
+	fmt.Println("Welcome to Golang conference. Please enter which conference you want to attend!:")
 	fmt.Scan(&conferenceCity)
 	// Captalize first letter of conferenceCity
 	cityName := cases.Title(language.English, cases.Compact).String(conferenceCity)

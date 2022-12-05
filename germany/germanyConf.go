@@ -6,8 +6,8 @@ import (
 )
 
 func GermanyConference() {
-	const conferenceTickets uint = 40
-	var remainingTickets uint = 40
+	const conferenceTickets uint = 60
+	var remainingTickets uint = 60
 	conferenceName := "Tokoyo"
 	bookings := []string{}
 
